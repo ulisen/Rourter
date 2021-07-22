@@ -81,12 +81,6 @@ jobs:
         git clone https://github.com/rufengsuixing/luci-app-zerotier.git
         svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman
         svn co https://github.com/lisaac/luci-app-diskman/trunk/applications/luci-app-diskman/
-        svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/autocore
-        svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/automount
-        svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-cpufreq
-        svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/dnsforwarder
-        svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/pdnsd-alt
-        svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-turboacc
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
