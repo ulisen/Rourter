@@ -24,7 +24,7 @@ env:
   REPO_URL: https://github.com/openwrt/openwrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: x86_new.config
+  CONFIG_FILE: x86_node.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -81,6 +81,7 @@ jobs:
         git clone https://github.com/rufengsuixing/luci-app-zerotier.git
         svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman
         svn co https://github.com/lisaac/luci-app-diskman/trunk/applications/luci-app-diskman/
+        git clone https://github.com/nxhack/openwrt-node-packages.git
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
