@@ -70,11 +70,7 @@ jobs:
 
     - name: Install Extra Packages
       run: |
-        cd openwrt
-        rm ./package/feeds/packages/swig
-        rm ./package/feeds/packages/libmraa
-        rm ./package/feeds/packages/libupm
-        cd ./package/
+        cd openwrt/package/
         mkdir lisen
         cd lisen
         git clone https://github.com/jerrykuku/luci-theme-argon.git
