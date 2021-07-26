@@ -95,9 +95,9 @@ jobs:
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
-        make -j$[$(nproc)+1] || make -j1 || make -j1 V=s package/node-homebridge-cmd4/compile
-        make -j$[$(nproc)+1] || make -j1 || make -j1 V=s package/node-homebridge-config-ui-x/compile
-        make -j$[$(nproc)+1] || make -j1 || make -j1 V=s package/node-pty-prebuilt-multiarch/compile
+        make package/node-homebridge-cmd4/compile
+        make package/node-homebridge-config-ui-x/compile
+        make package/node-pty-prebuilt-multiarch/compile
 
    
     - name: Check space usage
