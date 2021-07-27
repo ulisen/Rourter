@@ -73,6 +73,7 @@ jobs:
         cd openwrt/package/
         mkdir lisen
         cd lisen
+        svn co https://github.com/nxhack/openwrt-node-packages/trunk/node
         svn co https://github.com/nxhack/openwrt-node-packages/trunk/node-homebridge-cmd4
         svn co https://github.com/nxhack/openwrt-node-packages/trunk/node-homebridge-config-ui-x
         svn co https://github.com/nxhack/openwrt-node-packages/trunk/node-pty-prebuilt-multiarch
@@ -102,7 +103,9 @@ jobs:
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
-        make -j$[$(nproc)+1] || make -j1 || make -j1 V=s
+        #make -j$[$(nproc)+1] || make -j1 || make -j1 V=s
+        make package/node-homebridge-config-ui-x/compile
+               
         echo "::set-output name=status::success"
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
         [ -s DEVICE_NAME ] && echo "DEVICE_NAME=_$(cat DEVICE_NAME)" >> $GITHUB_ENV
