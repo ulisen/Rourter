@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: openwrt custom package
+name: openwrt custom mini package
 
 on:
   repository_dispatch:
