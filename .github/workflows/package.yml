@@ -73,9 +73,8 @@ jobs:
         cd openwrt/package/
         mkdir lisen
         cd lisen
-        git clone https://github.com/jerrykuku/luci-theme-argon.git
-
         svn co https://github.com/nxhack/openwrt-node-packages/trunk/node
+        svn co https://github.com/nxhack/openwrt-node-packages/trunk/node-homebridge
         svn co https://github.com/nxhack/openwrt-node-packages/trunk/node-homebridge-cmd4
         svn co https://github.com/nxhack/openwrt-node-packages/trunk/node-homebridge-config-ui-x
         svn co https://github.com/nxhack/openwrt-node-packages/trunk/node-pty-prebuilt-multiarch
