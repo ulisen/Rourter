@@ -78,6 +78,7 @@ jobs:
         git clone https://github.com/nxhack/openwrt-custom-packages.git
         svn co https://github.com/lisaac/luci-app-diskman/trunk/applications/luci-app-diskman/
         svn co https://github.com/nxhack/openwrt-node-packages/trunk/node
+        svn co https://github.com/nxhack/openwrt-node-packages/trunk/node-homebridge
         svn co https://github.com/nxhack/openwrt-node-packages/trunk/node-homebridge-cmd4
         svn co https://github.com/nxhack/openwrt-node-packages/trunk/node-homebridge-config-ui-x
         svn co https://github.com/nxhack/openwrt-node-packages/trunk/node-pty-prebuilt-multiarch
