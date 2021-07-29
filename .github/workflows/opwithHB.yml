@@ -77,6 +77,8 @@ jobs:
         git clone https://github.com/rufengsuixing/luci-app-zerotier.git
         git clone https://github.com/nxhack/openwrt-custom-packages.git
         svn co https://github.com/lisaac/luci-app-diskman/trunk/applications/luci-app-diskman/
+        svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-nfs
+        svn co https://github.com/lisaac/luci-app-diskman/trunk/applications/luci-app-diskman/
         svn co https://github.com/nxhack/openwrt-node-packages/trunk/node
         svn co https://github.com/nxhack/openwrt-node-packages/trunk/node-homebridge
         svn co https://github.com/nxhack/openwrt-node-packages/trunk/node-homebridge-cmd4
