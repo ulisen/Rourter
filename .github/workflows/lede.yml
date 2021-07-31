@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: lede x86
+name: lede k2p
 
 on:
   repository_dispatch:
@@ -23,7 +23,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: x86_lede.config
+  CONFIG_FILE: k2p.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: true
@@ -68,22 +68,6 @@ jobs:
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
-    - name: Install Extra Packages
-      run: |
-        cd openwrt/package/
-          git clone https://github.com/nxhack/openwrt-node-packages.git
-          rm -rf lean/luci-theme-argon
-          git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
-          rm -rf lean/smartdns
-          svn co https://github.com/pymumu/smartdns/trunk/package/openwrt smartdns
-          rm -rf lean/luci-app-smartdns
-          svn co https://github.com/pymumu/luci-app-smartdns/branches/lede luci-app-smartdns
-          rm -rf lean/luci-app-dockerman
-          svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman
-          rm -rf lean/luci-app-diskman
-          svn co https://github.com/lisaac/luci-app-diskman/trunk/applications/luci-app-diskman/
-          rm -rf lean/luci-app-ttyd
-          git clone https://github.com/deplives/luci-app-ttyd.git
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
